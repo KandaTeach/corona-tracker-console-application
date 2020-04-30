@@ -1,0 +1,9 @@
+-classpath 'D:\\Code\\Java\\corona-tracker-console-application\\build\\classes\\java\\main;D:\\Code\\Java\\corona-tracker-console-application\\build\\resources\\main;C:\\Users\\Uni-Care\\.gradle\\caches\\modules-2\\files-2.1\\org.json\\json\\20180130\\26ba2ec0e791a32ea5dfbedfcebf36447ee5b12c\\json-20180130.jar'
+-d 'D:\\Code\\Java\\corona-tracker-console-application\\build\\docs\\javadoc'
+-doctitle 'corona-tracker-console-application API'
+-notimestamp 
+-quiet 
+-windowtitle 'corona-tracker-console-application API'
+'D:\\Code\\Java\\corona-tracker-console-application\\src\\main\\java\\corona\\MainClass.java'
+'D:\\Code\\Java\\corona-tracker-console-application\\src\\main\\java\\corona\\OptionClass.java'
+'D:\\Code\\Java\\corona-tracker-console-application\\src\\main\\java\\corona\\ResultClass.java'
