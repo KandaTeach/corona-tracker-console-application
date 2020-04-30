@@ -2,7 +2,7 @@
 
 A console application used to track 
 
-## API Used
+## Used API
 
 https://disease.sh/
 
@@ -14,7 +14,13 @@ CoronaTracker Documentation can be found at `build\docs\javadoc`
 
 #### Syntax
 
+##### Java JVM
+
 `[--option] [query-name-name]`
+
+##### Gradle
+
+`"['--option','query-name-name']"`
 
 *NOTE* : avoid spaces. Replace spaces with `-`
 
@@ -51,5 +57,7 @@ CoronaTracker Documentation can be found at `build\docs\javadoc`
 4. If the command is not working download Gradle.
 
 ## Contact me
- * Facebook [here](www.facebook.com.ph\www.keneth.com.ph)
- * Github [here](www.github.com\kandateach)
+
+ * Facebook [here](https://www.facebook.com/www.keneth.com.ph)
+ 
+ * Github [here](https://github.com/KandaTeach)
