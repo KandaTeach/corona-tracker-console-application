@@ -1,6 +1,6 @@
 # CoronaTracker
 
-A console application used to track 
+A command line interface used to track covid-19 cases whole over the world.
 
 ## Used API
 
@@ -8,7 +8,7 @@ https://disease.sh/
 
 ## Documentation
 
-CoronaTracker Documentation can be found at `build\docs\javadoc`
+CoronaTracker Documentation can be found [here](https://github.com/KandaTeach/corona-tracker-console-application/tree/master/build/docs/javadoc)
 
 ## Arguments and Syntax
 
