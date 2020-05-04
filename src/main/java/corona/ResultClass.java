@@ -13,19 +13,20 @@ import org.json.JSONObject;
 import org.json.JSONException;
 
 /**
- * Class description
- * The purpose of this class is that it provides the results.
+ * Class description The purpose of this class is that it provides the results.
+ * 
  * @author John Keneth P. Paluca
  */
 public class ResultClass {
 
     /**
      * In this getJSON method it returns the JSON object after reading it.
+     * 
      * @param url API url address.
      * @return responce.
      */
     private static String getJSON(String url) {
-        //url.replaceAll(" ", "%20");
+        // url.replaceAll(" ", "%20");
         URL urlObj;
         HttpURLConnection conObj = null;
         BufferedReader reader;
@@ -54,7 +55,7 @@ public class ResultClass {
             reader.close();
             return response.toString();
 
-        // catch exceptions
+            // catch exceptions
         } catch (MalformedURLException ex) {
             System.out.print("Unaccepted URL");
         } catch (IOException ex) {
@@ -72,31 +73,33 @@ public class ResultClass {
         return null;
     }
 
-    // initialize List 
+    // initialize List
     private static List<Object> result;
 
     /**
      * In this storeResult method it stores the JSON object to ArrayList.
-     * @param json path of the API url.
+     * 
+     * @param json  path of the API url.
      * @param query query path of the API url.
      * @return null.
      */
-    protected static String storeResult(String json, String query)  {
+    protected static String storeResult(String json, String query) {
         String jsonURL;
-        final String[] LABEL_KEYS = {"cases","deaths","recovered","todayCases","todayDeaths","continent","country"};
+        final String[] LABEL_KEYS = { "cases", "deaths", "recovered", "todayCases", "todayDeaths", "continent",
+                "country" };
         JSONObject jsonObj;
         try {
             // get API url
-            jsonURL = getJSON("https://corona.lmao.ninja/v2/".concat(json + "/" + query.replaceAll("-","%20")));
+            jsonURL = getJSON("https://corona.lmao.ninja/v2/".concat(json + "/" + query.replaceAll("-", "%20")));
             // create JSONObject
             jsonObj = new JSONObject(jsonURL);
             // create a new ArrayList
             result = new ArrayList<Object>();
             // add data to ArrayList
-            for(byte i = 0; i < 7; i++) {
+            for (byte i = 0; i < 7; i++) {
                 result.add(jsonObj.get(LABEL_KEYS[i]));
             }
-        // catch exceptions
+            // catch exceptions
         } catch (JSONException ex) {
             result.add(null);
         }
@@ -105,6 +108,7 @@ public class ResultClass {
 
     /**
      * In this getResult method is getting the value from the ArrayList.
+     * 
      * @param index ArrayList index.
      * @return value of the index.
      */
