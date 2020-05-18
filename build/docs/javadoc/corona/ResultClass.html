@@ -155,9 +155,9 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected static java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../corona/ResultClass.html#storeResult-java.lang.String-java.lang.String-">storeResult</a></span>(java.lang.String&nbsp;json,
-           java.lang.String&nbsp;query)</code>
+<td class="colFirst"><code>protected static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../corona/ResultClass.html#setResult-java.lang.String-java.lang.String-">setResult</a></span>(java.lang.String&nbsp;json,
+         java.lang.String&nbsp;query)</code>
 <div class="block">In this storeResult method it stores the JSON object to ArrayList.</div>
 </td>
 </tr>
@@ -200,21 +200,25 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="storeResult-java.lang.String-java.lang.String-">
+<a name="setResult-java.lang.String-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>storeResult</h4>
-<pre>protected static&nbsp;java.lang.String&nbsp;storeResult(java.lang.String&nbsp;json,
-                                              java.lang.String&nbsp;query)</pre>
+<h4>setResult</h4>
+<pre>protected static&nbsp;void&nbsp;setResult(java.lang.String&nbsp;json,
+                                java.lang.String&nbsp;query)
+                         throws java.net.MalformedURLException,
+                                java.io.IOException</pre>
 <div class="block">In this storeResult method it stores the JSON object to ArrayList.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>json</code> - path of the API url.</dd>
 <dd><code>query</code> - query path of the API url.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>null.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.net.MalformedURLException</code> - for URL problem.</dd>
+<dd><code>org.json.JSONException</code> - for parsing JSON object.</dd>
+<dd><code>java.io.IOException</code> - for input and output problem.</dd>
 </dl>
 </li>
 </ul>
@@ -224,7 +228,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getResult</h4>
-<pre>protected static&nbsp;java.lang.String&nbsp;getResult(int&nbsp;index)</pre>
+<pre>protected static final&nbsp;java.lang.String&nbsp;getResult(int&nbsp;index)</pre>
 <div class="block">In this getResult method is getting the value from the ArrayList.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -155,20 +155,20 @@ extends <a href="../corona/ResultClass.html" title="class in corona">ResultClass
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected static java.lang.String</code></td>
+<td class="colFirst"><code>protected static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../corona/OptionClass.html#GET_ALL--">GET_ALL</a></span>()</code>
 <div class="block">In this GET_ALL method gets the total counting of the corona virus.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected static java.lang.String</code></td>
+<td class="colFirst"><code>protected static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../corona/OptionClass.html#GET_CONTINENT-java.lang.String-">GET_CONTINENT</a></span>(java.lang.String&nbsp;continent)</code>
 <div class="block">In this GET_CONTINENT method gets the total counting to the specific
  continent.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>protected static java.lang.String</code></td>
+<td class="colFirst"><code>protected static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../corona/OptionClass.html#GET_COUNTRY-java.lang.String-">GET_COUNTRY</a></span>(java.lang.String&nbsp;country)</code>
 <div class="block">In this GET_COUNTRY method gets the total counting to the specific country.</div>
 </td>
@@ -179,7 +179,7 @@ extends <a href="../corona/ResultClass.html" title="class in corona">ResultClass
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;corona.<a href="../corona/ResultClass.html" title="class in corona">ResultClass</a></h3>
-<code><a href="../corona/ResultClass.html#getResult-int-">getResult</a>, <a href="../corona/ResultClass.html#storeResult-java.lang.String-java.lang.String-">storeResult</a></code></li>
+<code><a href="../corona/ResultClass.html#getResult-int-">getResult</a>, <a href="../corona/ResultClass.html#setResult-java.lang.String-java.lang.String-">setResult</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -225,12 +225,12 @@ extends <a href="../corona/ResultClass.html" title="class in corona">ResultClass
 <ul class="blockList">
 <li class="blockList">
 <h4>GET_ALL</h4>
-<pre>protected static final&nbsp;java.lang.String&nbsp;GET_ALL()</pre>
+<pre>protected static final&nbsp;void&nbsp;GET_ALL()
+                             throws java.lang.Exception</pre>
 <div class="block">In this GET_ALL method gets the total counting of the corona virus.</div>
 <dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>storeResult method meaning returns the total counting of corona
-         virus.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code> - MalformedURLException, JSONException, IOException</dd>
 </dl>
 </li>
 </ul>
@@ -240,15 +240,15 @@ extends <a href="../corona/ResultClass.html" title="class in corona">ResultClass
 <ul class="blockList">
 <li class="blockList">
 <h4>GET_CONTINENT</h4>
-<pre>protected static final&nbsp;java.lang.String&nbsp;GET_CONTINENT(java.lang.String&nbsp;continent)</pre>
+<pre>protected static final&nbsp;void&nbsp;GET_CONTINENT(java.lang.String&nbsp;continent)
+                                   throws java.lang.Exception</pre>
 <div class="block">In this GET_CONTINENT method gets the total counting to the specific
  continent.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>continent</code> - continent path of the API url.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>storeResult method meaning returns the total counting to the specific
-         continent.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code> - MalformedURLException, JSONException, IOException</dd>
 </dl>
 </li>
 </ul>
@@ -258,14 +258,14 @@ extends <a href="../corona/ResultClass.html" title="class in corona">ResultClass
 <ul class="blockListLast">
 <li class="blockList">
 <h4>GET_COUNTRY</h4>
-<pre>protected static final&nbsp;java.lang.String&nbsp;GET_COUNTRY(java.lang.String&nbsp;country)</pre>
+<pre>protected static final&nbsp;void&nbsp;GET_COUNTRY(java.lang.String&nbsp;country)
+                                 throws java.lang.Exception</pre>
 <div class="block">In this GET_COUNTRY method gets the total counting to the specific country.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>country</code> - country path of the API url.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>storeResult method meaning returns the total counting to the specific
-         country.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code> - MalformedURLException, JSONException, IOException</dd>
 </dl>
 </li>
 </ul>
