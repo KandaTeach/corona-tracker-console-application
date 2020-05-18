@@ -23,10 +23,11 @@ public class ResultClass {
      * In this getJSON method it returns the JSON object after reading it.
      * 
      * @param url API url address.
+     * @throws MalformedURLException for URL problem.
+     * @throws IOException for input and output problem.
      * @return responce.
      */
-    private static String getJSON(String url) {
-        // url.replaceAll(" ", "%20");
+    private static String getJSON(String url) throws MalformedURLException, IOException {
         URL urlObj;
         HttpURLConnection conObj = null;
         BufferedReader reader;
@@ -53,24 +54,19 @@ public class ResultClass {
                 response.append(line);
             }
             reader.close();
+
             return response.toString();
 
-            // catch exceptions
-        } catch (MalformedURLException ex) {
-            System.out.print("Unaccepted URL");
-        } catch (IOException ex) {
-            System.out.print("File not Found\n");
         } finally {
             // disconnect
             if (conObj != null) {
                 try {
                     conObj.disconnect();
                 } catch (Exception ex) {
-                    System.out.print("Problem in disconnecting server\n");
+                    ex.printStackTrace();
                 }
             }
         }
-        return null;
     }
 
     // initialize List
@@ -81,16 +77,19 @@ public class ResultClass {
      * 
      * @param json  path of the API url.
      * @param query query path of the API url.
-     * @return null.
+     * @throws MalformedURLException for URL problem.
+     * @throws JSONException for parsing JSON object.
+     * @throws IOException for input and output problem.
      */
-    protected static String storeResult(String json, String query) {
+    protected static void setResult(String json, String query)
+            throws MalformedURLException, IOException {
         String jsonURL;
         final String[] LABEL_KEYS = { "cases", "deaths", "recovered", "todayCases", "todayDeaths", "continent",
                 "country" };
         JSONObject jsonObj;
         try {
             // get API url
-            jsonURL = getJSON("https://corona.lmao.ninja/v2/".concat(json + "/" + query.replaceAll("-", "%20")));
+            jsonURL = getJSON("https://disease.sh/v2/".concat(json + "/" + query.replaceAll("-", "%20")));
             // create JSONObject
             jsonObj = new JSONObject(jsonURL);
             // create a new ArrayList
@@ -99,11 +98,9 @@ public class ResultClass {
             for (byte i = 0; i < 7; i++) {
                 result.add(jsonObj.get(LABEL_KEYS[i]));
             }
-            // catch exceptions
         } catch (JSONException ex) {
             result.add(null);
         }
-        return null;
     }
 
     /**
@@ -112,7 +109,7 @@ public class ResultClass {
      * @param index ArrayList index.
      * @return value of the index.
      */
-    protected static String getResult(int index) {
+    protected static final String getResult(int index) {
         return result.get(index).toString();
     }
 }

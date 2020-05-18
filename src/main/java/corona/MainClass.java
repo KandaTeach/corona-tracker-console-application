@@ -63,28 +63,23 @@ public class MainClass extends OptionClass {
                 }
                 break;
             default:
-                System.out.print("Invalid\n");
                 break;
             }
-            CREDITS();
-
             // catch exceptions
-        } catch (NullPointerException ex) {
-            System.out.print("Invalid syntax\n");
+        } catch (Exception ex) {
+            System.out.print("Got a problem\n");
+            ex.printStackTrace();
+        } finally {
             CREDITS();
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            System.out.print("Invalid Command");
         }
     }
-
-    // initialize Array String INFO for CREDITS method
-    private static final String[] INFO = { "AUTOR - John Keneth P. Paluca",
-            "FACEBOOK - www.facebook.com/wwww.keneth.com.ph", "GITHUB - www.github.com/kandateach" };
 
     /**
      * Authors description.
      */
     private static final void CREDITS() {
+        final String[] INFO = { "AUTOR - John Keneth P. Paluca",
+            "FACEBOOK - www.facebook.com/wwww.keneth.com.ph", "GITHUB - www.github.com/kandateach" };
         System.out.printf("========================================================%n");
         for (byte i = 0; i < 3; i++) {
             System.out.printf(FORMAT_TABLE, INFO[i]);

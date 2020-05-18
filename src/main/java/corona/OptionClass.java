@@ -10,11 +10,10 @@ public class OptionClass extends ResultClass {
     /**
      * In this GET_ALL method gets the total counting of the corona virus.
      * 
-     * @return storeResult method meaning returns the total counting of corona
-     *         virus.
+     * @throws Exception MalformedURLException, JSONException, IOException
      */
-    protected static final String GET_ALL() {
-        return storeResult("all", "");
+    protected static final void GET_ALL() throws Exception{
+        setResult("all", "");
     }
 
     /**
@@ -22,21 +21,19 @@ public class OptionClass extends ResultClass {
      * continent.
      * 
      * @param continent continent path of the API url.
-     * @return storeResult method meaning returns the total counting to the specific
-     *         continent.
+     * @throws Exception MalformedURLException, JSONException, IOException
      */
-    protected static final String GET_CONTINENT(String continent) {
-        return storeResult("continents", continent);
+    protected static final void GET_CONTINENT(String continent) throws Exception {
+        setResult("continents", continent);
     }
 
     /**
      * In this GET_COUNTRY method gets the total counting to the specific country.
      * 
      * @param country country path of the API url.
-     * @return storeResult method meaning returns the total counting to the specific
-     *         country.
+     * @throws Exception MalformedURLException, JSONException, IOException
      */
-    protected static final String GET_COUNTRY(String country) {
-        return storeResult("countries", country);
+    protected static final void GET_COUNTRY(String country) throws Exception{
+        setResult("countries", country);
     }
 }
