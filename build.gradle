@@ -1,7 +1,4 @@
-plugins {
-    id 'java'
-    id 'application'
-}
+apply plugin: 'application'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -15,9 +12,12 @@ application {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
+    compile 'org.apache.commons:commons-lang3:3.6'
+    compile 'com.beust:jcommander:1.71'
     compile 'org.json:json:20180130'
 }
 
@@ -28,11 +28,11 @@ run {
 }
 
 jar {
-    archiveBaseName = 'coronaTracker'
+    archiveBaseName = applicationName
     archiveVersion = '1.0.0'
 
     manifest {
-        attributes('Implementation-Title': 'Gradle', 'Implementation-Version': archiveVersion, 'Main-Class': mainClassName)
+        attributes('Implementation-Title': archiveBaseName, 'Implementation-Version': archiveVersion, 'Main-Class': mainClassName)
     }
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
