@@ -1,89 +1,70 @@
 package corona;
 
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.ParameterException;
+
 /**
  * Class description API description https://disease.sh/
  * 
  * @author John Keneth P. Paluca
  * @version 1.0.0
  */
-public class MainClass extends OptionClass {
+public class MainClass extends ResultClass {
 
-    // formatting table
-    private static final String FORMAT_TABLE = "|| %-50s ||%n";
+    private static final ParameterClass parameterObj = new ParameterClass();
 
-    /**
-     * Main method.
-     * 
-     * @param args give arguments.
-     */
     public static void main(String[] args) {
-        final String[] LABEL = { "Cases - ", "Deaths - ", "Recovered - ", "Todays Cases - ", "Todays Deaths - ",
-                "Continent - ", "Country - " };
-
         try {
-            switch (args[0]) {
-            case "--all":
-            case "--today":
-                GET_ALL();
-                if (args[0] != "today") {
-                    System.out.printf(
-                            "========================================================%n||WORLD TOTAL CASES%-35s||%n========================================================%n",
-                            "");
-                    for (byte i = 0; i < 3; i++) {
-                        System.out.printf(FORMAT_TABLE, LABEL[i].concat(getResult(i)));
-                    }
-                } else {
-                    System.out.printf(
-                            "========================================================%n||TODAYS WORLD TOTAL CASES%-36s||%n========================================================%n",
-                            "");
-                    for (byte i = 3; i < 5; i++) {
-                        System.out.printf(FORMAT_TABLE, LABEL[i].concat(getResult(i)));
-                    }
-                }
-                break;
-
-            case "--continent":
-                GET_CONTINENT(args[1]);
-
-                System.out.printf(
-                        "========================================================%n||CONTINENT CASES%-37s||%n========================================================%n",
-                        "");
-                for (byte i = 0; i < 6; i++) {
-                    System.out.printf(FORMAT_TABLE, LABEL[i].concat(getResult(i)));
-                }
-                break;
-            case "--country":
-                GET_COUNTRY(args[1]);
-
-                System.out.printf(
-                        "========================================================%n||LOCAL COUNTRY CASES%-33s||%n========================================================%n",
-                        "");
-                for (byte i = 0; i < 7; i++) {
-                    System.out.printf(FORMAT_TABLE, LABEL[i].concat(getResult(i)));
-                }
-                break;
-            default:
-                break;
-            }
-            // catch exceptions
-        } catch (Exception ex) {
-            System.out.print("Got a problem\n");
-            ex.printStackTrace();
-        } finally {
-            CREDITS();
+            MainClass mainObj = new MainClass();
+            mainObj.inputHandle(args);
+            mainObj.run();
+        } catch (NullPointerException ex) {
+            System.exit(0);
         }
     }
 
-    /**
-     * Authors description.
-     */
-    private static final void CREDITS() {
-        final String[] INFO = { "AUTOR - John Keneth P. Paluca",
-            "FACEBOOK - www.facebook.com/wwww.keneth.com.ph", "GITHUB - www.github.com/kandateach" };
-        System.out.printf("========================================================%n");
-        for (byte i = 0; i < 3; i++) {
-            System.out.printf(FORMAT_TABLE, INFO[i]);
+    private void inputHandle(String... inputArgs) {
+        JCommander commander = new JCommander(parameterObj);
+        try {
+            commander.parse(inputArgs);
+        } catch (ParameterException ex) {
+            throw new IllegalArgumentException("Invalid Argument.");
         }
-        System.out.printf("========================================================%n");
+
+        if (parameterObj.Help()) {
+            commander.usage();
+            System.exit(0);
+        }
+    }
+
+    private void run() {
+        if (parameterObj.getAll() == true && parameterObj.getContinent() == null && parameterObj.getCountry() == null) {
+            printResult();
+        } else if (parameterObj.getAll() == false && parameterObj.getContinent() != null
+                && parameterObj.getCountry() == null) {
+            printResult(parameterObj.getContinent());
+        } else if (parameterObj.getAll() == false && parameterObj.getContinent() == null
+                && parameterObj.getCountry() != null) {
+            printResult("countries", parameterObj.getCountry());
+        } else if (parameterObj.getAll() == true && parameterObj.getContinent() != null
+                && parameterObj.getCountry() == null) {
+            printResult();
+            printResult(parameterObj.getContinent());
+        } else if (parameterObj.getAll() == true && parameterObj.getContinent() == null
+                && parameterObj.getCountry() != null) {
+            printResult();
+            printResult("countries", parameterObj.getCountry());
+        } else if (parameterObj.getAll() == false && parameterObj.getContinent() != null
+                && parameterObj.getCountry() != null) {
+            printResult(parameterObj.getContinent());
+            printResult("countries", parameterObj.getCountry());
+        } else if (parameterObj.getAll() == true && parameterObj.getContinent() != null
+                && parameterObj.getCountry() != null) {
+            printResult();
+            printResult(parameterObj.getContinent());
+            printResult("countries", parameterObj.getCountry());
+        } else {
+            System.out.print("Need Arguments to Parse.");
+        }
     }
 }
