@@ -50,7 +50,7 @@ abstract class ResultClass {
     private static final String FORMAT = "|%1$-26s|%2$,-27d|%n";
 
     protected static void printResult() {
-        JSONObject json = getJSON("https://disease.sh/v2/all".replaceAll("-", "%20"));
+        JSONObject json = getJSON("https://disease.sh/v3/covid-19/all");
         System.out.print("========================================================\n|"
                 .concat(StringUtils.center("WORLD TOTAL CASES", 54))
                 .concat("|\n========================================================\n"));
@@ -61,7 +61,7 @@ abstract class ResultClass {
     }
 
     protected static void printResult(String continentName) {
-        JSONObject json = getJSON("https://disease.sh/v2/continents/".concat(continentName).replaceAll("-", "%20"));
+        JSONObject json = getJSON("https://disease.sh/v3/covid-19/continents/".concat(continentName.replaceAll("-","%20")));
         System.out
                 .print("========================================================\n|"
                         .concat(StringUtils
@@ -74,7 +74,7 @@ abstract class ResultClass {
     }
 
     protected static void printResult(String country, String countryName) {
-        JSONObject json = getJSON("https://disease.sh/v2/".concat(country + "/" + countryName).replaceAll("-", "%20"));
+        JSONObject json = getJSON("https://disease.sh/v3/covid-19/".concat((country + "/" + countryName).replaceAll("-","%20")));
         System.out.print("========================================================\n|"
                 .concat(StringUtils.center(StringUtils.upperCase(json.getString("country")).concat(" TOTAL CASES"), 54))
                 .concat("|\n========================================================\n"));
