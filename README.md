@@ -2,62 +2,56 @@
 
 A command line interface used to track covid-19 cases whole over the world.
 
-## Used API
+## Source API
 
 https://disease.sh/
 
-## Documentation
-
-CoronaTracker Documentation can be found [here](https://github.com/KandaTeach/corona-tracker-console-application/tree/master/build/docs/javadoc)
-
-## Arguments and Syntax
+## Parameters and Syntax
 
 #### Syntax
 
-##### Java JVM
+##### Java
 
-`[--option] [query-name-name]`
+`[--parameters]`
 
 ##### Gradle
 
-`"['--option','query-name-name']"`
+`"['--parameters']"`
 
 *NOTE* : avoid spaces. Replace spaces with `-`
 
-#### Arguments
+#### Parameters
 
 1. `--all` total world result.
 
-2. `--today` todays total world result.
+2. `--continent [continent-name]` total continent result.
 
-3. `--continent [continent-name]` total continent result.
+3. `--country [country-name]` total country result.
 
-4. `--country [country-name]` total country result.
+4. `--help` view all parameters in console.
 
 ## How to Run
 
-#### Run with Java JVM.
+#### Run with Java
 
 1. Fork and clone git repository.
 
-2. In root project folder, find `build\libs\coronaTracker-1.0.0.jar`.
+2. Call directory file.
 
-3. Run using `java -jar .` command and add arguments to it `java - jar .\build\libs\coronaTracker-1.0.0.jar --country Philippines`.
+3. In root project folder, find `build\libs\coronaTracker-1.0.0.jar`.
 
-4. If the command is not working download Java JDK.
+4. Run using `java -jar .` command and add parameters to it `java -jar .\build\libs\coronaTracker-1.0.0.jar --country Philippines`.
+
+5. If the command is not working download Java JDK.
 
 #### Run with Gradle
 
 1. Fork and clone git repository.
 
-2. In root project folder, find `gradlew` and `gradlew.bat`.
+2. Call directory file.
 
-3. Run it using `gradlew run -PcoronaTracker` command and add arguments to it `gradlew run -PcoronaTracker="['--continent','asia']"`.
+3. In root project folder, find `gradlew` and `gradlew.bat`.
 
-4. If the command is not working download Gradle.
+4. Run it using `gradlew run -PcoronaTracker` command and add arguments to it `gradlew run -PcoronaTracker="['--continent','asia']"`.
 
-## Contact me
-
- * Facebook [here](https://www.facebook.com/www.keneth.com.ph)
- 
- * Github [here](https://github.com/KandaTeach)
+5. If the command is not working download Gradle.
