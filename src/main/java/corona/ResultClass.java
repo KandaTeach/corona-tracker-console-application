@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.JSONObject;
 import org.json.JSONException;
 
-public class ResultClass {
+abstract class ResultClass {
 
     private static final String[] LABEL_KEYS = { "Cases", "Deaths", "Recovered", "Today Cases", "Today Deaths" },
             JSON_KEYS = { "cases", "deaths", "recovered", "todayCases", "todayDeaths" };

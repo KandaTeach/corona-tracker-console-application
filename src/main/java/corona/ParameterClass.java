@@ -2,7 +2,7 @@ package corona;
 
 import com.beust.jcommander.Parameter;
 
-class ParameterClass {
+public class ParameterClass {
     @Parameter(names = "--help", description = "View all parameters", help = true)
     private boolean help;
 
