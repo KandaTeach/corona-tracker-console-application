@@ -4,7 +4,7 @@ import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
 
 /**
- * Class description API description https://disease.sh/
+ * API link https://disease.sh/
  * 
  * @author John Keneth P. Paluca
  * @version 1.0.0
