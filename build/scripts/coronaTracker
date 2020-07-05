@@ -80,7 +80,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/coronaTracker-1.0.0.jar:$APP_HOME/lib/json-20180130.jar
+CLASSPATH=$APP_HOME/lib/coronaTracker-1.0.0.jar:$APP_HOME/lib/commons-lang3-3.6.jar:$APP_HOME/lib/jcommander-1.71.jar:$APP_HOME/lib/json-20180130.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
