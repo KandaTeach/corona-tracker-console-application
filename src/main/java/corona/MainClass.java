@@ -39,29 +39,29 @@ public class MainClass extends ResultClass {
 
     private void run() {
         if (parameterObj.getAll() == true && parameterObj.getContinent() == null && parameterObj.getCountry() == null) {
-            printResult();
+            printResult("all","");
         } else if (parameterObj.getAll() == false && parameterObj.getContinent() != null
                 && parameterObj.getCountry() == null) {
-            printResult(parameterObj.getContinent());
+            printResult("continents" ,parameterObj.getContinent());
         } else if (parameterObj.getAll() == false && parameterObj.getContinent() == null
                 && parameterObj.getCountry() != null) {
             printResult("countries", parameterObj.getCountry());
         } else if (parameterObj.getAll() == true && parameterObj.getContinent() != null
                 && parameterObj.getCountry() == null) {
-            printResult();
-            printResult(parameterObj.getContinent());
+            printResult("all","");
+            printResult("continents", parameterObj.getContinent());
         } else if (parameterObj.getAll() == true && parameterObj.getContinent() == null
                 && parameterObj.getCountry() != null) {
-            printResult();
+            printResult("all","");
             printResult("countries", parameterObj.getCountry());
         } else if (parameterObj.getAll() == false && parameterObj.getContinent() != null
                 && parameterObj.getCountry() != null) {
-            printResult(parameterObj.getContinent());
+            printResult("continents", parameterObj.getContinent());
             printResult("countries", parameterObj.getCountry());
         } else if (parameterObj.getAll() == true && parameterObj.getContinent() != null
                 && parameterObj.getCountry() != null) {
-            printResult();
-            printResult(parameterObj.getContinent());
+            printResult("all", "");
+            printResult("continents", parameterObj.getContinent());
             printResult("countries", parameterObj.getCountry());
         } else {
             System.out.print("Need Arguments to Parse.");

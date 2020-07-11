@@ -47,39 +47,24 @@ abstract class ResultClass {
         return sb.toString();
     }
 
-    private static final String FORMAT = "|%1$-26s|%2$,-27d|%n";
+    protected static void printResult(String query, String subQuery) {
+        JSONObject json = getJSON(
+                "https://disease.sh/v3/covid-19/".concat((query + "/" + subQuery).replaceAll("-", "%20")));
+        String header = "";
+        
+        if (query == "all") {
+            header = query;
+        } else if (query == "continents") {
+            header = json.getString("continent");
+        } else if (query == "countries") {
+            header = json.getString("country");
+        }
 
-    protected static void printResult() {
-        JSONObject json = getJSON("https://disease.sh/v3/covid-19/all");
         System.out.print("========================================================\n|"
-                .concat(StringUtils.center("WORLD TOTAL CASES", 54))
+                .concat(StringUtils.center(StringUtils.upperCase(header).concat(" TOTAL CASES"), 54))
                 .concat("|\n========================================================\n"));
         for (byte i = 0; i < 5; i++) {
-            System.out.printf(FORMAT, LABEL_KEYS[i], json.get(JSON_KEYS[i]));
-        }
-        System.out.print("========================================================\n\n");
-    }
-
-    protected static void printResult(String continentName) {
-        JSONObject json = getJSON("https://disease.sh/v3/covid-19/continents/".concat(continentName.replaceAll("-","%20")));
-        System.out
-                .print("========================================================\n|"
-                        .concat(StringUtils
-                                .center(StringUtils.upperCase(json.getString("continent")).concat(" TOTAL CASES"), 54))
-                        .concat("|\n========================================================\n"));
-        for (byte i = 0; i < 5; i++) {
-            System.out.printf(FORMAT, LABEL_KEYS[i], json.get(JSON_KEYS[i]));
-        }
-        System.out.print("========================================================\n\n");
-    }
-
-    protected static void printResult(String country, String countryName) {
-        JSONObject json = getJSON("https://disease.sh/v3/covid-19/".concat((country + "/" + countryName).replaceAll("-","%20")));
-        System.out.print("========================================================\n|"
-                .concat(StringUtils.center(StringUtils.upperCase(json.getString("country")).concat(" TOTAL CASES"), 54))
-                .concat("|\n========================================================\n"));
-        for (byte i = 0; i < 5; i++) {
-            System.out.printf(FORMAT, LABEL_KEYS[i], json.get(JSON_KEYS[i]));
+            System.out.printf("|%1$-26s|%2$,-27d|%n", LABEL_KEYS[i], json.get(JSON_KEYS[i]));
         }
         System.out.print("========================================================\n\n");
     }
