@@ -7,17 +7,19 @@ A command line interface used to track covid-19 cases.
 #### Syntax
 
 ##### Java
-`[--parameters]`
+`[--parameters [path-query]]`
 
 ##### Gradle
-`"['--parameters']"`
+`"['--parameters', 'path-query']"`
 
-*NOTE* : avoid spaces. Replace spaces with `-`
+*NOTE* : Avoid space. Replace space with `-`.
 
 #### Parameters
-1. `--request [path-query]` request.
+1. `--request [path-query]` What data do you want to request for.
 
 2. `--help` view all parameters in console.
+
+*NOTE* : There are 4 paths to make request those are `all`, `continents-query`, `countries-query` and `states-query`.
 
 ## How to Run
 
