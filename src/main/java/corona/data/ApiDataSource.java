@@ -10,7 +10,10 @@ import org.json.JSONObject;
 
 public class ApiDataSource extends AbstractJSONAlgorithm {
 
-    private static final String[] LABEL_KEYS = { "Cases", "Deaths", "Recovered", "Today Cases", "Today Deaths", "Active Cases", "Critical Condition", "Tested", "Population" },JSON_KEYS = { "cases", "deaths", "recovered", "todayCases", "todayDeaths", "active", "critical", "tests", "population" };
+    private static final String[] LABEL_KEYS = { "Cases", "Deaths", "Recovered", "Today Cases", "Today Deaths",
+            "Active Cases", "Critical Condition", "Tested", "Population" },
+            JSON_KEYS = { "cases", "deaths", "recovered", "todayCases", "todayDeaths", "active", "critical", "tests",
+                    "population" };
 
     private String apiUrl = "https://disease.sh/";
 
@@ -43,7 +46,8 @@ public class ApiDataSource extends AbstractJSONAlgorithm {
                 state = jsonObj.getString("state");
             }
         } finally {
-            header = country == null && continent == null && state == null? "world" : country != null ? country : continent != null ? continent : state;
+            header = country == null && continent == null && state == null ? "world"
+                    : country != null ? country : continent != null ? continent : state;
         }
 
         System.out.print("========================================================\n|"
@@ -55,7 +59,7 @@ public class ApiDataSource extends AbstractJSONAlgorithm {
         for (byte i = 0; i < 9; i++) {
             try {
                 System.out.printf("|%1$-26s|%2$,-27d|%n", LABEL_KEYS[i], jsonObj.get(JSON_KEYS[i]));
-            } catch(JSONException jsonException) {
+            } catch (JSONException jsonException) {
                 continue;
             }
         }
@@ -65,6 +69,6 @@ public class ApiDataSource extends AbstractJSONAlgorithm {
 
     @Override
     public String toString() {
-        return  "API Source : "+ apiUrl + "/n" +  "Version" + "/n" + apiVersion;
+        return "API Source : " + apiUrl + "/n" + "Version" + "/n" + apiVersion;
     }
 }
