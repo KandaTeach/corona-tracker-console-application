@@ -8,8 +8,6 @@ import com.beust.jcommander.JCommander;
 import org.json.JSONObject;
 
 /**
- * API link https://disease.sh/
- * 
  * @author John Keneth P. Paluca
  * @version 1.0.0
  */
