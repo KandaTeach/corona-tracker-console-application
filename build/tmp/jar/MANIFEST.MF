@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Implementation-Title: coronaTracker
 Implementation-Version: 1.0.0
-Main-Class: corona.MainClass
+Main-Class: corona.Main
 
