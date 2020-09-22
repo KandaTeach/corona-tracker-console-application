@@ -85,7 +85,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=%APP_HOME%\lib\coronaTracker-1.0.0.jar;%APP_HOME%\lib\commons-lang3-3.6.jar;%APP_HOME%\lib\jcommander-1.71.jar;%APP_HOME%\lib\json-20180130.jar
 
 @rem Execute coronaTracker
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CORONA_TRACKER_OPTS%  -classpath "%CLASSPATH%" corona.MainClass %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %CORONA_TRACKER_OPTS%  -classpath "%CLASSPATH%" corona.Main %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
