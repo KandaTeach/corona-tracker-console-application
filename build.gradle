@@ -6,7 +6,7 @@ java {
 }
 
 application {
-    mainClassName = 'corona.MainClass'
+    mainClassName = 'corona.Main'
     applicationName = 'coronaTracker'
 }
 
