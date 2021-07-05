@@ -5,6 +5,7 @@
 **CoronaTracker** is an open-source Spring boot application for command line interface use to track COVID-19 cases given by many license data source around the world. It Supports terminal for linux and macos, and cmd for windows.
 
 # Usage
+Install [curl](https://curl.se/) to run all these endpoints (*if your existing terminal does not recognize curl*)
 ### World Data
 ```
 
@@ -27,7 +28,7 @@
 
 # Installation
 ## With Apache Maven 
-Install [Apache Maven](https://maven.apache.org/) cli and [Java version 11](https://www.oracle.com/ph/java/technologies/javase-jdk11-downloads.html) before doing the local installation
+Install [Apache Maven](https://maven.apache.org/) cli and [Java version 11](https://www.oracle.com/ph/java/technologies/javase-jdk11-downloads.html) before doing the local installation.
 
 1. Fork and clone git repository.
 
@@ -51,7 +52,7 @@ If you're facing problems and bugs please let me know by [creating an issue](htt
 # License
 CoronaTracker is licensed under [GNU General Public License v3](https://opensource.org/licenses/GPL-3.0).
 
-# Sources:
+# Sources
 > https://disease.sh
 
 > https://github.com/disease-sh/awesome-novelcovid
