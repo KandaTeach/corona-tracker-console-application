@@ -1,5 +1,5 @@
 # CoronaTracker 
-[![created by](https://img.shields.io/badge/created%20by-KandaTeach-blue.svg?longCache=true&style=flat-square)](https://github.com/KandaTeach) [![Release](https://img.shields.io/github/release/kandateach/corona-tracker-console-application.svg?style=flat-square)](https://github.com/kandateach/corona-tracker-console-application/releases) [![License](https://img.shields.io/github/license/kandateach/corona-tracker-console-application.svg?style=flat-square)](https://github.com/KandaTeach/corona-tracker-console-application/blob/master/LICENSE)
+[![created by](https://img.shields.io/badge/created%20by-KandaTeach-blue.svg?longCache=true&style=flat-square)](https://github.com/KandaTeach) [![Release](https://img.shields.io/github/release/kandateach/corona-tracker-console-application.svg?style=flat-square)](https://github.com/kandateach/corona-tracker-console-application/releases) [![License](https://img.shields.io/github/license/KandaTeach/corona-tracker-console-application.svg?style=flat-square)](https://github.com/KandaTeach/corona-tracker-console-application/blob/master/LICENSE)
 
 # Welcome to CoronaTracker
 **CoronaTracker** is an open-source Spring boot application for command line interface use to track COVID-19 cases given by many license data source around the world. It Supports terminal for linux and macos, and cmd for windows.
