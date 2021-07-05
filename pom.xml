@@ -19,7 +19,7 @@
 
 	<name>corona-tracker-console-application</name>
 
-	<description>Demo project for Spring Boot</description>
+	<description>coronaTracker</description>
 
 	<properties>
 		<java.version>11</java.version>
