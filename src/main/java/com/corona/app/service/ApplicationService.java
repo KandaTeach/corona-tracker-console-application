@@ -12,7 +12,7 @@ public class ApplicationService {
 
     public String seeDocs() {
         logger.info(">> ApplicationService : welcome message");
-        return "Welcome to CoronaTracker Please visit: https://github.com/KandaTeach/corona-tracker-console-application";
+        return "Welcome to CoronaTracker Please visit: https://github.com/KandaTeach/corona-tracker-console-application\n\n";
     }
 
 }
