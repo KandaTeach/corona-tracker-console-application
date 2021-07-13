@@ -45,7 +45,7 @@ Install [Apache Maven](https://maven.apache.org/) CLI and [Java version 11](http
 6. Run using `java -jar .` command `java -jar ./target/corona-tracker-console-application-0.0.1-SNAPSHOT.jar`.
 
 # Awesome-NovelCOVID [![Mentioned in Awesome-NovelCOVID](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/disease-sh/awesome-novelcovid)
-CoronaTracker mentioned in Awesome-NovelCOVID check it [here](https://github.com/disease-sh/awesome-novelcovid).
+CoronaTracker was mentioned in Awesome-NovelCOVID check it [here](https://github.com/disease-sh/awesome-novelcovid).
 # Issues
 If you're facing problems, please let me know by [creating an issue](https://github.com/kandateach/corona-tracker-console-application/issues/new). Attach some screenshots or errors to make it easy to track bugs. Thank you, and wear a face mask!
 
